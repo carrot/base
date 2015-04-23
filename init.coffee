@@ -1,11 +1,20 @@
 exports.configure = [
   {
-    type: 'input',
-    name: 'name',
+    name: 'name'
     message: "Your project's name"
-  }, {
-    type: 'input',
-    name: 'description',
+  },
+  {
+    name: 'description'
     message: "A brief description of your project"
+  },
+  {
+    type: 'confirm'
+    name: 'netlify'
+    message: 'Do you need netlify hosting?'
   }
 ]
+
+exports.after = (utils, config) ->
+  if config.netlify
+    utils.exec('npm install')
+    .then -> utils.exec('./node_modules/.bin/netlify init')
