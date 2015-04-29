@@ -1,5 +1,6 @@
 {
   "name": "project x",
   "description": "the best project that ever projected",
-  "netlify": false
+  "netlify": false,
+  "grid": true
 }
