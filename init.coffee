@@ -16,6 +16,11 @@ exports.configure = [
     type: 'confirm'
     name: 'grid'
     message: 'Do you require a grid framework?'
+  },
+  {
+    type: 'confirm'
+    name: 'yaml'
+    message: 'Do you require roots yaml integration?'
   }
 ]
 
