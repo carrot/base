@@ -11,6 +11,11 @@ exports.configure = [
     type: 'confirm'
     name: 'netlify'
     message: 'Do you need netlify hosting?'
+  },
+  {
+    type: 'confirm'
+    name: 'grid'
+    message: 'Do you require a grid framework?'
   }
 ]
 

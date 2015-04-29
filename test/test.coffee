@@ -27,3 +27,11 @@ describe 'sprout.init', ->
     contents = fs.readFileSync(tgt, 'utf8')
     contents.should.match /# project x/
     done()
+
+  it 'properly includes grid plugin', (done) ->
+    tgt = path.join(test_path, 'assets', 'css','master.styl')
+    fs.existsSync(tgt).should.be.true
+
+    contents = fs.readFileSync(tgt, 'utf8')
+    contents.should.match /@import 'jeet'/
+    done()
