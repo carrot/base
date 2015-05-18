@@ -22,10 +22,10 @@
   "homepage": "https://github.com/carrot/base",
   "devDependencies": {
     "mocha": "2.2.x",
-    "coffee-script": "1.9.1",
-    "chai": "2.1.x",
-    "chai-as-promised": "4.3.x",
-    "sprout": "0.2.x",
+    "coffee-script": "1.9.x",
+    "chai": "2.3.x",
+    "chai-as-promised": "5.0.x",
+    "sprout": "0.4.x",
     "rimraf": "2.3.x"
   }
 }
