@@ -35,3 +35,11 @@ describe 'sprout.init', ->
     contents = fs.readFileSync(tgt, 'utf8')
     contents.should.match /@import 'jeet'/
     done()
+
+  it 'properly includes roots-yaml extension', (done) ->
+    tgt = path.join(test_path, 'app.coffee')
+    fs.existsSync(tgt).should.be.true
+
+    contents = fs.readFileSync(tgt, 'utf8')
+    contents.should.match /yaml()/
+    done()
