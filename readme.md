@@ -18,5 +18,5 @@ To make default: `roots template default base`
 
 Usage
 -----
-
-`roots new project-name`
+- if you've made this template your default simply, `roots new project-name`
+- otherwise, `roots new project-name -t base`
