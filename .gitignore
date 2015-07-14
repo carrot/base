@@ -2,3 +2,4 @@
 node_modules
 tmp
 test-base
+test/config/test-sprout-roots-base
