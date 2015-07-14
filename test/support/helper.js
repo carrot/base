@@ -15,4 +15,4 @@ global.chai = chai;
 global.sprout = sprout;
 global.should = should;
 global.h = h;
-global._path = _path
+global._path = _path;

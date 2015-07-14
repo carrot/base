@@ -3,11 +3,12 @@ path   = require 'path'
 fs     = require 'fs'
 Roots  = require 'roots'
 
-test_template_path = path.resolve(_path, '../..')
-test_path          = path.join(__dirname, 'tmp')
+test_template_path = path.resolve(_path, '../../')
+test_path          = path.join(_path, 'tmp')
 tpl = 'test-sprout-roots-base'
 opts =
   config: path.join(_path, 'locals.json')
+  branch: 'km.tests'
 
 before (done) ->
   sprout.add(tpl, test_template_path)
@@ -18,22 +19,15 @@ before (done) ->
 after ->
   sprout.remove(tpl)
 
-describe 'sprout.init', ->
+describe 'sprout', ->
+  it 'inits the project properly', (done) ->
+    if fs.existsSync(path.join(test_path, 'views'))
+      tgt = path.join(test_path, 'views/index.jade')
 
-  it 'properly creates the project from locals', (done) ->
-    tgt = path.join(test_path, 'readme.md')
-    fs.existsSync(tgt).should.be.true
+    else
+      tgt = path.join(test_path, 'index.jade')
 
-    contents = fs.readFileSync(tgt, 'utf8')
-    contents.should.match /# project x/
-    done()
-
-  it 'properly includes grid plugin', (done) ->
-    tgt = path.join(test_path, 'assets', 'css','master.styl')
-    fs.existsSync(tgt).should.be.true
-
-    contents = fs.readFileSync(tgt, 'utf8')
-    contents.should.match /@import 'jeet'/
+    fs.existsSync(tgt).should.be.ok
     done()
 
   it 'properly includes roots-yaml extension', (done) ->
@@ -45,9 +39,9 @@ describe 'sprout.init', ->
     done()
 
 describe 'roots.compile', ->
-  before -> h.project.compile(Roots, 'site')
+  before -> h.project.compile(Roots, 'tmp')
 
-  it 'compiles the roots project, properly', (done) ->
+  it 'compiles the roots project properly', (done) ->
     tgt = path.join(test_path, 'public', 'index.html')
     fs.existsSync(tgt).should.be.ok
     done()
