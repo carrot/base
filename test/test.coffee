@@ -5,7 +5,7 @@ locals = require './fixtures/locals.json'
 
 test_template_path = path.resolve(_path, '../..')
 test_path          = path.join(__dirname, 'tmp')
-tpl = 'test-sprout-android-reader'
+tpl = 'test-sprout-roots-base'
 opts =
   config: path.join(_path, 'locals.json')
 
