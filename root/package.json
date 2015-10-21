@@ -3,18 +3,17 @@
   "description": "<%= description %>",
   "dependencies": {
     "autoprefixer-stylus": "0.5.x",
-    "axis": "0.3.x",
-    "coffee-script": "1.8.x",
-    "css-pipeline": "0.2.x",
+    "axis": "0.5.x",
+    "coffee-script": "1.10.x",
+    "css-pipeline": "0.3.x",
     "jade": "1.x",
     "js-pipeline": "0.2.x",
-    "marked": "0.3.x",
-    "jstransformer-marked": "0.0.x",
+    "jstransformer-marked": "1.0.x",
     <% if (netlify == true) { %>"roots": "3.x",<%} -%>
     <% if (yaml == true) { %>"roots-yaml": "0.0.x",<%} -%>
     <% if (grid == true) { %>"jeet": "6.1.x",<%} -%>
     "rupture": "0.6.x",
-    "stylus": "0.49.x"
+    "stylus": "0.52.x"
   },
   "devDependencies": {
     <% if (netlify == true) { %>"netlify-cli": "*"<%}%>
