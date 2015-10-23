@@ -1,25 +1,11 @@
 {
   "name": "base",
-  "version": "0.0.1",
   "description": "a base template for carrot roots projects",
-  "main": "index.js",
-  "scripts": {
-    "test": "node_modules/.bin/mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/carrot/base.git"
-  },
-  "keywords": [
-    "roots",
-    "sprout"
-  ],
+  "version": "0.0.1",
   "author": "Carrot <dev@carrotcreative.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/carrot/base/issues"
   },
-  "homepage": "https://github.com/carrot/base",
   "devDependencies": {
     "chai": "2.3.x",
     "chai-as-promised": "5.0.x",
@@ -29,5 +15,19 @@
     "roots": "^3.1.0",
     "roots-util": "^0.1.0",
     "sprout": "0.4.x"
+  },
+  "homepage": "https://github.com/carrot/base",
+  "keywords": [
+    "roots",
+    "sprout"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carrot/base.git"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
   }
 }
