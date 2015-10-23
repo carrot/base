@@ -1,6 +1,14 @@
 {
   "name": "<%= S.dasherize(name) %>",
   "description": "<%= description %>",
+  "version": "0.0.1",
+  "author": "Carrot Creative <hello@carrotcreative.com>",
+  "bugs": {
+    "url": "https://github.com/carrot/<%= S.slugify(name) %>/issues"
+  },
+  "devDependencies": {
+    <% if (netlify == true) { %>"netlify-cli": "*"<%}%>
+  },
   "dependencies": {
     "autoprefixer-stylus": "0.5.x",
     "axis": "0.5.x",
@@ -15,7 +23,12 @@
     "rupture": "0.6.x",
     "stylus": "0.52.x"
   },
-  "devDependencies": {
-    <% if (netlify == true) { %>"netlify-cli": "*"<%}%>
+  "homepage": "https://github.com/carrot/<%= S.slugify(name) %>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carrot/<%= S.slugify(name) %>.git"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
   }
 }
