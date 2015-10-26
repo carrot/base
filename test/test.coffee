@@ -8,7 +8,6 @@ test_path          = path.join(_path, 'tmp')
 tpl = 'test-sprout-roots-base'
 opts =
   config: path.join(_path, 'locals.json')
-  branch: 'km.tests'
 
 before (done) ->
   sprout.add(tpl, test_template_path)

@@ -12,12 +12,32 @@ css_pipeline = require 'css-pipeline'
 <% if (yaml == true) { %>yaml         = require 'roots-yaml'<%}%>
 
 module.exports =
-  ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf']
+  ignores: [
+    'readme.md',
+    '.DS_Store',
+    '.travis.yml'
+    '**/layout.*'
+    '**/_*'
+    '.gitignore'
+    '.git'
+    '.editorconfig',
+    'test/**'
+  ]
 
   extensions: [
     <%= roots_extensions %>
-    js_pipeline(files: 'assets/js/*.coffee', out: 'js/build.js', minify: true, hash: true),
-    css_pipeline(files: 'assets/css/*.styl', out: 'css/build.css', minify: true, hash: true)
+    js_pipeline(
+      files: 'assets/js/*.coffee'
+      out: 'js/build.js'
+      minify: true
+      hash: true
+    ),
+    css_pipeline(
+      files: 'assets/css/*.styl'
+      out: 'css/build.css'
+      minify: true
+      hash: true
+    )
   ]
 
   stylus:

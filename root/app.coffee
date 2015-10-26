@@ -13,12 +13,15 @@ css_pipeline = require 'css-pipeline'
 
 module.exports =
   ignores: [
-    'readme.md'
+    'readme.md',
+    '.DS_Store',
+    '.travis.yml'
     '**/layout.*'
     '**/_*'
     '.gitignore'
     '.git'
-    '.editorconfig'
+    '.editorconfig',
+    'test/**'
   ]
 
   extensions: [
