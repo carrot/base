@@ -3,16 +3,17 @@ path   = require 'path'
 fs     = require 'fs'
 Roots  = require 'roots'
 
-test_path = path.join(__dirname, '..')
-project = new Roots(test_path)
+project_path = path.join __dirname, '..'
+compile_project = (done) ->
+  h.project.compile(Roots, path.resolve './').then -> done()
+
+before (done) -> h.project.install_dependencies('*',done)
+after -> h.project.remove_folders('**/public')
 
 describe 'roots.compile', ->
-  before ->
-    h.project.compile(project, __dirname)
-
-  after -> rimraf.sync(path.join(test_path, 'public'))
+  before (done) -> compile_project(done)
 
   it 'compiles the roots project properly', (done) ->
-    tgt = path.join(test_path, 'public', 'index.html')
+    tgt = path.join(project_path, 'public/index.html')
     fs.existsSync(tgt).should.be.ok
     done()
