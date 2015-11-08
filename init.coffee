@@ -26,5 +26,6 @@ exports.configure = [
 
 exports.after = (utils, config) ->
   if config.netlify
-    utils.exec('npm install')
-    .then -> utils.exec('./node_modules/.bin/netlify init')
+    utils.target.exec('npm install')
+    .then -> utils.target.exec('./node_modules/.bin/netlify init')
+    .catch console.error
