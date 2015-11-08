@@ -4,8 +4,8 @@ var chai = require('chai'),
     Util = require('roots-util');
 
 var should = chai.should(),
-    _path = path.join(__dirname),
-    h = new Util.Helpers({base: _path});
+    _path = path.join(__dirname, '../..'),
+    h = new Util.Helpers();
 
 chai.use(chai_promise);
 
