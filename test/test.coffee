@@ -5,24 +5,23 @@ Roots  = require 'roots'
 
 test_template_path = path.resolve(_path, '../../')
 test_path          = path.join(_path, 'tmp')
-tpl = 'test-sprout-roots-base'
+tpl                = 'test-sprout-roots-base'
 opts =
   config: path.join(_path, 'locals.json')
 
 before (done) ->
+  console.log test_template_path
   sprout.add(tpl, test_template_path)
-  .then -> rimraf.sync(test_path)
-  .then -> sprout.init(tpl, test_path, opts)
-  .then -> h.project.install_dependencies('*', done)
+    .then -> rimraf.sync(test_path)
+    .then -> sprout.init(tpl, test_path, opts)
+    .then -> h.project.install_dependencies('*', done)
 
-after ->
-  sprout.remove(tpl)
+after -> sprout.remove(tpl)
 
 describe 'sprout', ->
   it 'inits the project properly', (done) ->
     if fs.existsSync(path.join(test_path, 'views'))
       tgt = path.join(test_path, 'views/index.jade')
-
     else
       tgt = path.join(test_path, 'index.jade')
 
