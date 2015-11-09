@@ -11,7 +11,7 @@
     "chai-as-promised": "5.0.x",
     "mocha": "2.2.x",
     "rimraf": "2.3.x",
-    <% if (netlify == true) { %>"netlify-cli": "*",<%} -%>
+    <% if (netlify == true) { %>\t"netlify-cli": "*",\n<%} -%>
     "roots": "^3.1.0",
     "roots-util": "^0.1.0"
 
@@ -22,13 +22,32 @@
     "coffee-script": "1.10.x",
     "css-pipeline": "0.3.x",
     "jade": "1.x",
+    "rupture": "0.6.x",
     "js-pipeline": "0.2.x",
     "jstransformer-marked": "1.0.x",
     <% if (netlify == true) { %>"roots": "3.x",<%} -%>
     <% if (yaml == true) { %>"roots-yaml": "0.0.x",<%} -%>
-    <% if (grid == true) { %>"jeet": "6.1.x",<%} -%>
-    "rupture": "0.6.x",
-    "stylus": "0.52.x"
+    <% if (grid == true) { %>
+      "jeet": "6.1.x",
+      "stylus": "0.52.x",
+      "lost": "6.6.x",
+    <%} -%>
+    <% if (postcssPlugins["rucksack"].checked) { %>
+      "rucksack-css": "0.8.x",
+    <% } %>
+    <% if (postcssPlugins["cssnext"].checked) { %>
+      "cssnext": "1.8.x",
+    <% } %>
+    <% if (postcssPlugins["system"].checked) { %>
+      "postcss-system": "0.0.x",
+    <% } %>
+    <% if (postcssPlugins["postcss font pack"].checked) { %>
+      "postcss-font-pack": "1.0.x",
+    <% } %>
+    <% if (postcssPlugins["postcss import"].checked) { %>
+      "postcss-import": "7.1.x",
+    <% } %>
+    "poststylus": "0.2.x"
   },
   "homepage": "https://github.com/carrot/<%= S.slugify(name) %>",
   "repository": {

@@ -3,5 +3,27 @@
   "description": "the best project that ever projected",
   "netlify": false,
   "grid": true,
+  "postcssPlugins": [
+    {
+      "name": "rucksack",
+      "checked": true
+    },
+    {
+      "name": "cssnext",
+      "checked": true
+    },
+    {
+      "name": "system",
+      "checked": true
+    },
+    {
+      "name": "postcss font pack",
+      "checked": true
+    },
+    {
+      "name": "postcss import",
+      "checked": true
+    }
+  ],
   "yaml": true
 }
