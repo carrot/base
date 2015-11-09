@@ -2,6 +2,8 @@ rimraf = require 'rimraf'
 path   = require 'path'
 fs     = require 'fs'
 Roots  = require 'roots'
+W      = require 'when'
+require('shelljs/global')
 
 test_template_path = path.resolve(_path, '../../')
 test_path          = path.join(_path, 'tmp')
@@ -42,3 +44,14 @@ describe 'roots.compile', ->
     tgt = path.join(test_path, 'public', 'index.html')
     fs.existsSync(tgt).should.be.ok
     done()
+
+describe 'base', ->
+  before -> h.project.compile(Roots, 'tmp')
+
+  it 'should pass all tests', (done) ->
+    moveToTmp = cd test_path
+    mocha = W exec 'npm test'
+      .then (res) ->
+        if res.code > 0 or res.output.indexOf('failing') > -1
+          W.reject
+      .then done()
