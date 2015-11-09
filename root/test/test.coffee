@@ -5,7 +5,7 @@ Roots  = require 'roots'
 
 project_path = path.join __dirname, '..'
 compile_project = (done) ->
-  h.project.compile(Roots, path.resolve './').then -> done()
+  h.project.compile(Roots, project_path).then -> done()
 
 before (done) -> h.project.install_dependencies('*',done)
 after -> h.project.remove_folders('**/public')
