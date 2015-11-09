@@ -2,8 +2,8 @@ rimraf = require 'rimraf'
 path   = require 'path'
 fs     = require 'fs'
 Roots  = require 'roots'
-W      = require 'when'
-require('shelljs/global')
+Promise  = require 'bluebird'
+shell = require('shelljs')
 
 test_template_path = path.resolve(_path, '../../')
 test_path          = path.join(_path, 'tmp')
@@ -49,9 +49,10 @@ describe 'base', ->
   before -> h.project.compile(Roots, 'tmp')
 
   it 'should pass all tests', (done) ->
-    moveToTmp = cd test_path
-    mocha = W exec 'npm test'
+    shell.cd test_path
+    exec = Promise.method shell.exec
+    exec 'npm test'
       .then (res) ->
-        if res.code > 0 or res.output.indexOf('failing') > -1
-          W.reject
+        res.code.should.equal(0)
+        (res.output.indexOf('failing') < 0).should.be.true
       .then done()
