@@ -1,22 +1,41 @@
 {
   "name": "<%= S.dasherize(name) %>",
   "description": "<%= description %>",
+  "version": "0.0.1",
+  "author": "Carrot Creative <hello@carrotcreative.com>",
+  "bugs": {
+    "url": "https://github.com/carrot/<%= S.slugify(name) %>/issues"
+  },
+  "devDependencies": {
+    "chai": "2.3.x",
+    "chai-as-promised": "5.0.x",
+    "mocha": "2.2.x",
+    "rimraf": "2.3.x",
+    <% if (netlify == true) { %>"netlify-cli": "*",<%} -%>
+    "roots": "^3.1.0",
+    "roots-util": "^0.1.0"
+
+  },
   "dependencies": {
     "autoprefixer-stylus": "0.5.x",
-    "axis": "0.3.x",
-    "coffee-script": "1.8.x",
-    "css-pipeline": "0.2.x",
+    "axis": "0.5.x",
+    "coffee-script": "1.10.x",
+    "css-pipeline": "0.3.x",
     "jade": "1.x",
     "js-pipeline": "0.2.x",
-    "marked": "0.3.x",
-    "jstransformer-marked": "0.0.x",
+    "jstransformer-marked": "1.0.x",
     <% if (netlify == true) { %>"roots": "3.x",<%} -%>
     <% if (yaml == true) { %>"roots-yaml": "0.0.x",<%} -%>
     <% if (grid == true) { %>"jeet": "6.1.x",<%} -%>
     "rupture": "0.6.x",
-    "stylus": "0.49.x"
+    "stylus": "0.52.x"
   },
-  "devDependencies": {
-    <% if (netlify == true) { %>"netlify-cli": "*"<%}%>
+  "homepage": "https://github.com/carrot/<%= S.slugify(name) %>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carrot/<%= S.slugify(name) %>.git"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
   }
 }
