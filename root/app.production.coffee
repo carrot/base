@@ -52,7 +52,7 @@ module.exports =
   ]
 
   extensions: [
-    <%= roots_exts %>
+    <% if (yaml == true) { %> <%= roots_exts %> <% } %>
     js_pipeline(
       files: 'assets/js/*.coffee'
       out: 'js/build.js'
