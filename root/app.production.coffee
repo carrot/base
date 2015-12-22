@@ -16,23 +16,23 @@ lost         = require 'lost'
 <% if (yaml == true) { %>
 yaml         = require 'roots-yaml'
 <% } %>
-<% if (postcssPlugins["rucksack"].checked) { %>
+<% if (postcssPlugins["rucksack"] && postcssPlugins["rucksack"].checked) { %>
 <% postcss_exts += 'rucksack(), '; -%>
 rucksack     = require 'rucksack-css'
 <% } %>
-<% if (postcssPlugins["cssnext"].checked) { %>
+<% if (postcssPlugins["cssnext"] && postcssPlugins["cssnext"].checked) { %>
 <% postcss_exts += 'cssnext(), '; -%>
 cssnext      = require 'cssnext'
 <% } %>
-<% if (postcssPlugins["system"].checked) { %>
+<% if (postcssPlugins["system"] && postcssPlugins["system"].checked) { %>
 <% postcss_exts += 'system.postcss(), '; -%>
 system       = require 'postcss-system'
 <% } %>
-<% if (postcssPlugins["postcss font pack"].checked) { %>
+<% if (postcssPlugins["postcss font pack"] && postcssPlugins["postcss font pack"].checked) { %>
 <% postcss_exts += 'fontPack(), '; -%>
 fontPack     = require 'postcss-font-pack'
 <% } %>
-<% if (postcssPlugins["postcss import"].checked) { %>
+<% if (postcssPlugins["postcss import"] && postcssPlugins["postcss import"].checked) { %>
 <% postcss_exts += 'atImport(), '; -%>
 atImport     = require 'postcss-import'
 <% } %>
@@ -52,7 +52,7 @@ module.exports =
   ]
 
   extensions: [
-    <%= roots_exts %>
+    <% if (yaml == true) { %> <%= roots_exts %> <% } %>
     js_pipeline(
       files: 'assets/js/*.coffee'
       out: 'js/build.js'

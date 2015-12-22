@@ -32,19 +32,19 @@
       "stylus": "0.52.x",
       "lost": "6.6.x",
     <%} -%>
-    <% if (postcssPlugins["rucksack"].checked) { %>
+    <% if (postcssPlugins["rucksack"] && postcssPlugins["rucksack"].checked) { %>
       "rucksack-css": "0.8.x",
     <% } %>
-    <% if (postcssPlugins["cssnext"].checked) { %>
+    <% if (postcssPlugins["cssnext"] && postcssPlugins["cssnext"].checked) { %>
       "cssnext": "1.8.x",
     <% } %>
-    <% if (postcssPlugins["system"].checked) { %>
+    <% if (postcssPlugins["system"] && postcssPlugins["system"].checked) { %>
       "postcss-system": "0.0.x",
     <% } %>
-    <% if (postcssPlugins["postcss font pack"].checked) { %>
+    <% if (postcssPlugins["postcss font pack"] && postcssPlugins["postcss font pack"].checked) { %>
       "postcss-font-pack": "1.0.x",
     <% } %>
-    <% if (postcssPlugins["postcss import"].checked) { %>
+    <% if (postcssPlugins["postcss import"] && postcssPlugins["postcss import"].checked) { %>
       "postcss-import": "7.1.x",
     <% } %>
     "poststylus": "0.2.x"
