@@ -21,7 +21,7 @@ exports.configure = [
     type: 'checkbox'
     name: 'postcssPlugins'
     message: 'Check all Postcss plugins you wish to install.'
-    chocies: [
+    choices: [
       'rucksack'
       'cssnext'
       'system'
