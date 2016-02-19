@@ -1,11 +1,7 @@
 language: node_js
 node_js:
-  - "5.3"
-  - "4.2"
-  - "0.12"
-  - "0.11"
-  - "0.10"
-  - "iojs"
+  - "5"
+  - "4"
 sudo: false
 before_script:
   - git config --global user.email "builds@travis-ci.com"
