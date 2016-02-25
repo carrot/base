@@ -7,7 +7,7 @@
     "url": "https://github.com/carrot/base/issues"
   },
   "devDependencies": {
-    "bluebird": "^3.0.5",
+    "bluebird": "^3.3.2",
     "chai": "3.5.0",
     "chai-as-promised": "5.2.0",
     "coffee-script": "1.9.x",
