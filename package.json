@@ -16,7 +16,7 @@
     "roots": "^4.0.0",
     "roots-util": "^0.2.0",
     "shelljs": "^0.6.0",
-    "sprout": "0.4.x"
+    "sprout": "1.1.0"
   },
   "homepage": "https://github.com/carrot/base",
   "keywords": [
