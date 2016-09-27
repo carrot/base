@@ -9,7 +9,7 @@
   "devDependencies": {
     "bluebird": "^3.0.5",
     "chai": "3.5.0",
-    "chai-as-promised": "5.2.0",
+    "chai-as-promised": "6.0.0",
     "coffee-script": "1.9.x",
     "mocha": "2.4.5",
     "rimraf": "2.5.1",
