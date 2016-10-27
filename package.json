@@ -15,7 +15,7 @@
     "rimraf": "2.5.1",
     "roots": "^4.0.0",
     "roots-util": "^0.2.0",
-    "shelljs": "^0.6.0",
+    "shelljs": "^0.7.5",
     "sprout": "0.4.x"
   },
   "homepage": "https://github.com/carrot/base",
