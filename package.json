@@ -12,7 +12,7 @@
     "chai-as-promised": "5.2.0",
     "coffee-script": "1.9.x",
     "mocha": "2.4.5",
-    "rimraf": "2.5.1",
+    "rimraf": "2.6.1",
     "roots": "^4.0.0",
     "roots-util": "^0.2.0",
     "shelljs": "^0.6.0",
